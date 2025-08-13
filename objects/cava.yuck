@@ -1,0 +1,14 @@
+(deflisten cava_left_v "scripts/cava_left.sh")
+(deflisten cava_right_v "scripts/cava_right.sh")
+
+(defwidget cava_left []
+    (box :orientation "h" :haligh "start"
+        cava_left_v
+    )
+)
+
+(defwidget cava_right []
+    (box :orientation "h" :haligh "end"
+        cava_right_v
+    )
+)

@@ -1,0 +1,24 @@
+(include "./objects/workspaces.yuck")
+(include "./objects/center.yuck")
+(include "./objects/right.yuck")
+
+(defwidget bar []
+    (centerbox :orientation "h"
+        (workspaces)
+        (center)
+        (right)
+    )
+)
+
+(defwindow bar []
+    :monitor 0
+    :windowtype "dock"
+    :geometry (geometry :x "0%"
+                        :y "0.5%"
+                        :width "99.5%"
+                        :height "1px"
+                        :anchor "top center"
+                        )
+    :reserve (struts :side "top" :distance "4%")
+    (bar)
+)

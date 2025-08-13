@@ -1,0 +1,10 @@
+(include "./objects/cava.yuck")
+(include "./objects/album.yuck")
+
+(defwidget center []
+    (box :class "sidestuff" :orientation "h" :space-evenly false :halign "end"
+    (cava_left)
+    (album)
+    (cava_right)
+    )
+)

@@ -1,0 +1,6 @@
+(deflisten workspace "scripts/workspace.sh")
+
+
+(defwidget workspaces []
+  (literal :content workspace)
+)
