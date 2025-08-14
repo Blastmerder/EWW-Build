@@ -1,4 +1,7 @@
+(include "objects/battary.yuck")
 
 (defwidget right []
-    (box)
+    (box :class "sidestuff" :orientation "h" :space-evenly false :halign "end"
+        (battary)
+    )
 )

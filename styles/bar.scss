@@ -1,6 +1,8 @@
+@import 'Colors.scss';
+
 .bar {
-  background-color: #3a3a3a;
-  color: #b0b4bc;
+  background-color: $bg;
+  // color: #b0b4bc;
   padding: 5px;
   border-radius: 10px;
 }

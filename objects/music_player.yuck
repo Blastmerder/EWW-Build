@@ -1,0 +1,83 @@
+(defwidget music_pop []
+	(box 
+        :class "pop" 
+        :orientation "h" 
+        :space-evenly "false" 
+        :vexpand "false" 
+        :hexpand "false"
+
+            (box 
+                :vexpand "false" 
+                :hexpand "false"  
+                ;; ToDo Add image of album
+                :style "background-image: url('');"
+            )
+
+            (box 
+                :orientation "v" 
+                :spacing 20 
+                :space-evenly "false" 
+                :vexpand "false" 
+                :hexpand "false"
+                
+                ;; ToDo Change text to relevant
+                (label 
+                    :halign "center" 
+                    :wrap "true" 
+                    :limit-width 13 
+                    :text "song"
+                )
+                (label 
+                    :halign "center" 
+                    :wrap "true" 
+                    :limit-width 15 
+                    :text "song_artist"
+                )
+
+                (box 
+                    :orientation "h" 
+                    :spacing 15 
+                    :halign "center" 
+                    :space-evenly "false" 
+                    :vexpand "false" 
+                    :hexpand "false"
+
+                    ;; ToDo images and usage of buttons
+                    (button :class "button")
+                    (button :class "button")
+                    (button :class "button")
+                )
+
+                ;; ToDo Scroll bar
+                (box 
+                    :halign "center" 
+                    :vexpand "false" 
+                    :hexpand "false" 
+                    :space-evenly "false"
+
+                    (scale 
+                        :onscroll "" 
+                        :min 0 
+                        :active "true" 
+                        :max 100
+                    )
+                )
+            )
+    )
+)
+
+
+(defwindow music_win 
+    :stacking "fg" 
+    :focusable "false" 
+    :screen 1 
+    :geometry (
+        geometry 
+        :x "0" 
+        :y "7%" 
+        :width 428 
+        :height 104 
+        :anchor "top center"
+    )
+	    (music_pop)
+)

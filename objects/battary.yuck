@@ -1,0 +1,9 @@
+(defpoll battary_charge :interval "15s" "scripts/battary.sh --bat")
+(defpoll battary_image :interval "3s" "scripts/battary.py")
+
+(defwidget battary []
+    (box :class "sidestuff" :orientation "h" :space-evenly false :halign "end"
+        (label :text "${battary_charge}% ")
+        (button :class "button" :style "background-image: url(${battary_image});")
+    )
+)

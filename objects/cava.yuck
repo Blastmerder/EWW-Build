@@ -1,14 +1,23 @@
 (deflisten cava_left_v "scripts/cava_left.sh")
 (deflisten cava_right_v "scripts/cava_right.sh")
+(defpoll revealer_cava :interval "5s" "scripts/cava.py")
 
 (defwidget cava_left []
-    (box :orientation "h" :haligh "start"
-        cava_left_v
+    (revealer :transition "slideleft"
+			      :reveal true
+			      :duration "350ms"
+        (box :orientation "h" :haligh "start"
+            cava_left_v
+        )
     )
 )
 
 (defwidget cava_right []
-    (box :orientation "h" :haligh "end"
-        cava_right_v
+    (revealer :transition "slideright"
+			      :reveal true
+			      :duration "350ms"
+        (box :orientation "h" :haligh "end"
+            cava_right_v
+        )
     )
 )
