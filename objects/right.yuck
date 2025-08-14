@@ -1,7 +1,15 @@
 (include "objects/battary.yuck")
+(include "objects/clock.yuck")
 
 (defwidget right []
-    (box :class "sidestuff" :orientation "h" :space-evenly false :halign "end"
+    (box :class "sidestuff" :orientation "h" :space-evenly false :halign "end" :class "info_bar"
         (battary)
+        
+        (label 
+            :text "|"
+            :class "spliter"
+        )    
+
+        (clock)
     )
 )

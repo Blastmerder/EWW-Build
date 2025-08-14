@@ -32,6 +32,6 @@ def get_workspaces():
     for i in range(len(out_put1)):
         result.append(f'(button :onclick "bspc desktop -f {i+1}" :class "button" :style "background-image: url({images[icons[i]]}); padding-right: 5px;") ')
 
-    return f'(box :orientation "h" :space-evenly false :haligh "start" {"".join(result)})'
+    return f'(box :class "workspaces_bar" :orientation "h" :space-evenly false :haligh "start" {"".join(result)})'
 
 print(get_workspaces())
