@@ -1,9 +1,26 @@
 (include "objects/battary.yuck")
 (include "objects/clock.yuck")
+(include "objects/language.yuck")
+(include "objects/volume.yuck")
 
 (defwidget right []
-    (box :class "sidestuff" :orientation "h" :space-evenly false :halign "end" :class "info_bar"
+    (box :orientation "h" :space-evenly false :halign "end" :class "info_bar"
+;; ToDo WiFi module, System module (ram)
         (battary)
+        
+        (label 
+            :text "|"
+            :class "spliter"
+        )   
+        
+        (volume)
+        
+        (label 
+            :text "|"
+            :class "spliter"
+        )    
+
+        (language)
         
         (label 
             :text "|"

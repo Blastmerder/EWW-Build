@@ -1,0 +1,30 @@
+(defpoll Volume :interval "1s" "./scripts/volume.py --value")
+(defpoll Volume_icon :interval "1s" "./scripts/volume.py --icon")
+(defvar volume_rev false)
+
+(defwidget volume []
+    (eventbox :onhover "eww update volume_rev=true"
+			  :onhoverlost "eww update volume_rev=false"
+        (box
+            :orientation "h" :space-evenly false :halign "end" 
+            (revealer :transition "slideleft"
+                :reveal volume_rev
+                :duration "350ms"
+                (box :class "volume_bar" :halign "center" :vexpand "false" :hexpand "false" :space-evenly "false"
+                    (scale
+                        :tooltip Volume
+                        :onchange "wpctl set-volume @DEFAULT_AUDIO_SINK@ {}%" 
+                        :active "true"
+                        :min 0 
+                        :max 100 
+                        :value Volume
+                    )
+                )
+            )
+            (label 
+                :text "${Volume}% " 
+            )
+            (button :class "button" :style "background-image: url(${Volume_icon});")
+        )
+    )
+)

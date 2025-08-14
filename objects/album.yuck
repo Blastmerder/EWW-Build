@@ -1,7 +1,7 @@
 (defwidget album []
     (box :orientation "h" :space-evenly false :haligh "start"
         (button :class "button" :style "background-image: url('images/left_arrow.svg');")
-        (button :class "button" :style "background-image: url('images/album.svg'); border-radius: 11px;" :onclick "scripts/Music-Pop.sh")
+        (button :class "button" :style "background-image: url('images/album.svg'); border-radius: 11px;" :onclick "scripts/pop-out.sh music_win")
         (button :class "button" :style "background-image: url('images/right_arrow.svg');")
     )
 )

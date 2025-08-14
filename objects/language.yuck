@@ -1,0 +1,18 @@
+(defpoll layout :interval "1s" "scripts/layout.py --layout")
+(defpoll layout_caps_rev :interval "1s" "scripts/layout.py --caps")
+
+(defwidget language []
+    (box
+        :orientation "h" :space-evenly false :halign "end"
+
+        (label :text "${layout} ")
+        ;; ToDo swtich layout by click
+        (revealer :transition "slideleft"
+                :reveal layout_caps_rev
+                :duration "150ms"
+                (label :text "CAPS  ")
+            )
+        (button :class "button" :style "background-image: url('images/language.svg');")
+    )
+    
+)
