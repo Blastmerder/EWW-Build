@@ -1,11 +1,12 @@
 .volume_bar scale trough highlight {
   background-image: linear-gradient(to right, #afcee0 30%, #a1bdce 50%, #77a5bf 100% *50);
-	border-radius: 22px;
+  border-radius: 22px;
+  margin : 0px 0px 0px -5px;
 }
 
 .volume_bar scale trough {
 	background-color: #232232;
-    box-shadow: 0px 2px 2px 2px #06060b;
+    box-shadow: 2px 2px 2px 2px #06060b;
 	border-radius: 22px;
 	min-height: 10px;
 	min-width: 100px;

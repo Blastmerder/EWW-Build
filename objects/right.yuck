@@ -2,10 +2,18 @@
 (include "objects/clock.yuck")
 (include "objects/language.yuck")
 (include "objects/volume.yuck")
+(include "objects/wifi.yuck")
 
 (defwidget right []
     (box :orientation "h" :space-evenly false :halign "end" :class "info_bar"
 ;; ToDo WiFi module, System module (ram)
+        (wifi)
+            
+        (label 
+            :text "|"
+            :class "spliter"
+        )   
+
         (battary)
         
         (label 

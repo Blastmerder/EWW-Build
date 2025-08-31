@@ -1,7 +1,9 @@
+(deflisten album_image "python3 -u ~/.config/eww/scripts/music_data.py --image")
+
 (defwidget album []
     (box :orientation "h" :space-evenly false :haligh "start"
-        (button :class "button" :style "background-image: url('images/left_arrow.svg');")
-        (button :class "button" :style "background-image: url('images/album.svg'); border-radius: 11px;" :onclick "scripts/pop-out.sh music_win")
-        (button :class "button" :style "background-image: url('images/right_arrow.svg');")
+        (button :class "button" :style "background-image: url('images/left_arrow.svg');" :onclick "mpc prev")
+        (button :class "button" :style "background-image: url(${album_image}); border-radius: 11px;" :onclick "scripts/pop-out.sh music_win")
+        (button :class "button" :style "background-image: url('images/right_arrow.svg');" :onclick "mpc next")
     )
 )

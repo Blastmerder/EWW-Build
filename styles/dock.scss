@@ -1,0 +1,16 @@
+@import 'Colors.scss';
+
+@keyframes ShowUp {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.dock {
+    animation: ShowUp 0.5s alternate ease-in-out;
+    background-repeat: no-repeat;
+    background-image: url('../../Downloads/wallhaven-vpg2vl_1920x1080.png');
+}

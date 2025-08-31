@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import subprocess
+from listener import listener
 
 images = {
     '$empty-select': "'images/workspaces/full/Select.svg'",
@@ -32,6 +33,7 @@ def get_workspaces():
     for i in range(len(out_put1)):
         result.append(f'(button :onclick "bspc desktop -f {i+1}" :class "button" :style "background-image: url({images[icons[i]]}); padding-right: 5px;") ')
 
+    print(f'(box :class "workspaces_bar" :orientation "h" :space-evenly false :haligh "start" {"".join(result)})')
     return f'(box :class "workspaces_bar" :orientation "h" :space-evenly false :haligh "start" {"".join(result)})'
 
-print(get_workspaces())
+listener(get_workspaces, "bspc subscribe desktop node_transfer".split(' '))

@@ -10,7 +10,8 @@
                 :vexpand "false" 
                 :hexpand "false"  
                 ;; ToDo Add image of album
-                :style "background-image: url('');"
+                :class "album_image"
+                :style "background-image: url(${album_image});"
             )
 
             (box 

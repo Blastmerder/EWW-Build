@@ -1,2 +1,3 @@
 (include "./objects/music_player.yuck")
 (include "./objects/bar.yuck")
+(include "./objects/dashboard.yuck")

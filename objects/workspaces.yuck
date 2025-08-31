@@ -1,4 +1,4 @@
-(deflisten workspace "scripts/workspace.sh")
+(deflisten workspace "python3 -u ~/.config/eww/scripts/workspace.py")
 
 
 (defwidget workspaces []

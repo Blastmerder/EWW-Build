@@ -1,0 +1,20 @@
+(defpoll wifi_name :interval "1s" "./scripts/wifi.py --name-active")
+(defpoll wifi_icon :interval "1s" "./scripts/wifi.py --icon")
+(defvar wifi_rev false)
+
+(defwidget wifi []
+    (eventbox :onhover "eww update wifi_rev=true"
+			  :onhoverlost "eww update wifi_rev=false"
+        (box
+            :orientation "h" :space-evenly false :halign "end" 
+            (revealer :transition "slideleft"
+                :reveal wifi_rev
+                :duration "350ms"
+                (label 
+                    :text "${wifi_name} " 
+                )
+            )
+            (button :class "button" :style "background-image: url(${wifi_icon});")
+        )
+    )
+)
