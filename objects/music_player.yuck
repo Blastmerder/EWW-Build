@@ -1,3 +1,7 @@
+(deflisten track-title "python3 -u ~/.config/eww/scripts/music_data.py --track-title")
+(deflisten track-artist "python3 -u ~/.config/eww/scripts/music_data.py --track-author")
+(deflisten track-levels "python3 -u ~/.config/eww/scripts/music_data.py --levels")
+
 (defwidget music_pop []
 	(box 
         :class "pop" 
@@ -6,47 +10,37 @@
         :vexpand "false" 
         :hexpand "false"
 
-            (box 
-                :vexpand "false" 
-                :hexpand "false"  
-                ;; ToDo Add image of album
+            (box
+                :halign "center" 
                 :class "album_image"
                 :style "background-image: url(${album_image});"
             )
 
             (box 
                 :orientation "v" 
-                :spacing 20 
+                :halign "center" 
+                :spacing 10
                 :space-evenly "false" 
                 :vexpand "false" 
                 :hexpand "false"
+                :class "music_control"
                 
                 ;; ToDo Change text to relevant
-                (label 
-                    :halign "center" 
-                    :wrap "true" 
-                    :limit-width 13 
-                    :text "song"
-                )
-                (label 
-                    :halign "center" 
-                    :wrap "true" 
-                    :limit-width 15 
-                    :text "song_artist"
-                )
-
-                (box 
-                    :orientation "h" 
-                    :spacing 15 
-                    :halign "center" 
-                    :space-evenly "false" 
-                    :vexpand "false" 
-                    :hexpand "false"
-
-                    ;; ToDo images and usage of buttons
-                    (button :class "button")
-                    (button :class "button")
-                    (button :class "button")
+                ;;(label 
+                ;;    :halign "center" 
+                ;;    :wrap "true" 
+                ;;    :limit-width 13 
+                ;;    :text track-title
+                ;;)
+                ;;(label 
+                ;;    :halign "center" 
+                ;;    :wrap "true" 
+                ;;    :limit-width 15 
+                ;;    :text track-artist
+                ;;)
+                (label
+                    :class "synth"
+                    :text track-levels
                 )
 
                 ;; ToDo Scroll bar
@@ -55,6 +49,7 @@
                     :vexpand "false" 
                     :hexpand "false" 
                     :space-evenly "false"
+                    :class "music_scroll_bar"
 
                     (scale 
                         :onscroll "" 
@@ -63,6 +58,29 @@
                         :max 100
                     )
                 )
+
+                (box
+                    :orientation "h" 
+                    :spacing 25
+                    :space-evenly "false" 
+
+                    ;; ToDo images and usage of buttons
+                    (button :class "button" :style "background-image: url('images/music/shuffle_off.svg');" :onclick "mpc shuffle")
+
+                    (box
+                        :orientation "h"
+                        :halign "center" 
+                        :spacing 5 
+
+                        (button :class "button" :style "background-image: url('images/music/prev.svg');" :onclick "mpc prev")
+                        (button :class "button" :style "background-image: url('images/music/play.svg');" :onclick "mpc pause")
+                        (button :class "button" :style "background-image: url('images/music/next.svg');" :onclick "mpc next")
+                    )
+
+                    (button :class "button" :style "background-image: url('images/music/repeat_off.svg');" :onclick "mpc repeat")
+                    
+                )
+                
             )
     )
 )
@@ -70,13 +88,13 @@
 
 (defwindow music_win 
     :stacking "fg" 
-    :focusable "false" 
+    :focusable "true" 
     :screen 1 
     :geometry (
         geometry 
         :x "0" 
-        :y "7%" 
-        :width 428 
+        :y "5%" 
+        :width 400
         :height 104 
         :anchor "top center"
     )

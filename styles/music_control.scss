@@ -1,0 +1,26 @@
+@import 'Colors.scss';
+
+
+.music_control {
+	margin : 70px 0px 0px 20px;
+}
+
+
+.music_scroll_bar scale trough highlight {
+  background-image: linear-gradient(to right, $color15 30%, $color14 50%, $color13 100% *50);
+  border-radius: 22px;
+  margin : 0px 0px 0px -5px;
+}
+
+.music_scroll_bar scale trough {
+	background-color: $foreground;
+    box-shadow: 2px 2px 2px 2px #06060b;
+	border-radius: 22px;
+	min-height: 10px;
+	min-width: 180px;
+	margin : 0px 10px 0px 0px;
+}
+
+.synth {
+    letter-spacing: 2px;
+}
