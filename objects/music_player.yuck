@@ -100,3 +100,18 @@
     )
 	    (music_pop)
 )
+
+(defwindow music_win_dash
+    :stacking "fg" 
+    :focusable "true" 
+    :screen 1 
+    :geometry (
+        geometry 
+        :x "0" 
+        :y "0" 
+        :width 400
+        :height 104 
+        :anchor "top right"
+    )
+	    (music_pop)
+)
