@@ -3,11 +3,12 @@
 
 .music_control {
 	margin : 70px 0px 0px 20px;
+	min-height: 104px;
 }
 
 
 .music_scroll_bar scale trough highlight {
-  background-image: linear-gradient(to right, $color15 30%, $color14 50%, $color13 100% *50);
+  background-image: linear-gradient(to right, $color14 30%, $color13 50%, $color12 100% *50);
   border-radius: 22px;
   margin : 0px 0px 0px -5px;
 }
@@ -18,7 +19,7 @@
 	border-radius: 22px;
 	min-height: 10px;
 	min-width: 180px;
-	margin : 0px 10px 0px 0px;
+	// margin : 0px 10px 0px 0px;
 }
 
 .synth {

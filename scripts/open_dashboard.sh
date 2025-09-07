@@ -1,18 +1,16 @@
 pop() {
     LOCK_FILE_SONG="$HOME/.cache/eww-dashboard.lock"
 
-    run() {
-        eww open 'dashboard'
-    }
-
     # Open widgets
     if [[ ! -f "$LOCK_FILE_SONG" ]]; then
         touch "$LOCK_FILE_SONG"
-        run 'dashboard'
+        eww open-many background \
+                        music_win
     else
-        eww close 'dashboard'
+        eww close background \
+                  music_win
         rm "$LOCK_FILE_SONG" && echo "closed"
     fi
 }
 
-pop 'dashboard'
+pop

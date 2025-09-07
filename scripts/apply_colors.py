@@ -5,18 +5,20 @@ import os
 import shutil
 from pathlib import Path
 
-template_folder = Path('./templates/')
-images_folder = Path('./images/')
+HOME = subprocess.check_output(['pwd'], text=True).split('.')[0].replace('\n', '')
+
+template_folder = Path(f'{HOME}/.config/eww/templates/')
+images_folder = Path(f'{HOME}/.config/eww/images/')
 
 shutil.rmtree(images_folder)
 
 shutil.copytree(template_folder, images_folder, copy_function=shutil.copy2)
 
-with open("./styles/Colors.scss", 'r', encoding='utf-8') as f:
+with open(f"{HOME}/.config/eww/styles/Colors.scss", 'r', encoding='utf-8') as f:
     values = {i.split(':')[0].replace('$', '').replace(':', ''): i.split(':')[1] for i in f.read().replace(' ', '').replace('\n', '').split(';')[0:-1]}
 
 
-for dirpath, dirnames, filenames in os.walk('./images/'):
+for dirpath, dirnames, filenames in os.walk(f'{HOME}/.config/eww/images/'):
     for name in filenames:
         if name.lower().endswith('.svg'):
             path = os.path.join(dirpath, name)

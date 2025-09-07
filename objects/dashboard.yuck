@@ -1,4 +1,4 @@
-;; (include "./objects/right.yuck")
+;; (include "./objects/music_player.yuck")
 
 (defwidget dashboard_init []
     (box :orientation "h"
@@ -6,7 +6,7 @@
     )
 )
 
-(defwindow dashboard []
+(defwindow background []
     :monitor 0
     :windowtype "dock"
     :geometry (geometry :x "0%"
